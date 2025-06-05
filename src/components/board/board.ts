@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { GameService } from '../../services/game.service';
+import { Component, effect, input } from '@angular/core';
+import { Tile } from '../../models/tile.model';
 
 @Component({
   selector: 'app-board',
@@ -8,7 +8,11 @@ import { GameService } from '../../services/game.service';
   styleUrl: './board.css'
 })
 export class Board {
+  data = input<Tile[]>();
 
-  constructor(gameService: GameService) {
+  constructor() {
+    effect(() => {
+      console.log(this.data());
+    })
   }
 }

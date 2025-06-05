@@ -1,6 +1,6 @@
 export type Tile = {
     id: number,
-    img: string,
+    img?: string,
     active: boolean,
-    pair: number
+    pair?: number
 }
