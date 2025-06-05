@@ -1,1 +1,7 @@
 <p>board works!</p>
+
+<div class="board">
+    @for(tile of data(); track tile.id) {
+        <img [style.backgroundImage]="'url('+ tile.img +')'" />
+    }
+</div>
