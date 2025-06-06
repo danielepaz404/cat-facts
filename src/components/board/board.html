@@ -2,6 +2,6 @@
 
 <div class="board">
     @for(tile of gameService.boardDataSignal(); track tile.id) {
-        <app-tile [data]="tile" (click)="onClickHandler(tile.id)"/>
+        <app-tile [data]="tile" (click)="onClickHandler(tile)"/>
     }
 </div>
