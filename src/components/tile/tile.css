@@ -1,0 +1,26 @@
+.tile {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.tile.active {
+    transform: rotateY(180deg);
+}
+
+.front {
+    width: 100%;
+    height: 250px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+}

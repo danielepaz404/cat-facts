@@ -2,11 +2,3 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
-.board img {
-    width: 100%;
-    height: 250px;
-    display: inline-block;
-    background-size: cover;
-    background-position: center;
-}

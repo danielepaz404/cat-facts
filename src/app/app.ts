@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Board } from '../components/board/board';
-import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +10,4 @@ import { GameService } from '../services/game.service';
 })
 export class App {
   protected title = 'cat-facts';
-  protected gameService = inject(GameService);
 }

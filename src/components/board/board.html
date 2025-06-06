@@ -1,7 +1,7 @@
 <p>board works!</p>
 
 <div class="board">
-    @for(tile of data(); track tile.id) {
-        <img [style.backgroundImage]="'url('+ tile.img +')'" />
+    @for(tile of gameService.boardDataSignal(); track tile.id) {
+        <app-tile [data]="tile" (click)="onClickHandler(tile.id)"/>
     }
 </div>

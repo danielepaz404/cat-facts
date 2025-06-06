@@ -1,18 +1,31 @@
-import { Component, effect, input } from '@angular/core';
-import { Tile } from '../../models/tile.model';
+import { Component, effect, inject } from '@angular/core';
+import { TileComponent } from "../tile/tile";
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-board',
-  imports: [],
+  imports: [TileComponent],
   templateUrl: './board.html',
   styleUrl: './board.css'
 })
 export class Board {
-  data = input<Tile[]>();
+  protected gameService = inject(GameService);
 
   constructor() {
     effect(() => {
-      console.log(this.data());
+      console.log(this.gameService.boardDataSignal());
     })
+  }
+
+  onClickHandler(index: number) {
+    this.gameService.boardDataSignal.update(boardData => 
+      boardData.map(tile => {
+        if (tile.id === index) {
+          tile.active = !tile.active;
+        }
+
+        return tile;
+      })
+    )
   }
 }
